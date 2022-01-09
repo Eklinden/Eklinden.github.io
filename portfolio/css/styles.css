@@ -1,7 +1,7 @@
 :root {
     --clr-primary: rgba(133, 255, 222, 1);
     --clr-secoundary: rgba(133, 255, 222, .5);
-  
+    --clr-third: #55ffd2;
     --bg-clr-dark: #090909;
     --bg-clr-light: #eeeeee;
   
@@ -429,5 +429,11 @@ a {
     }
     .button::before {
         width: 100%;
+    }
+    .spacer {
+        height: 20px;
+    }
+    .item a {
+        color: var(--clr-third);
     }
 }
