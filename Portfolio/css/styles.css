@@ -1,0 +1,418 @@
+:root {
+    --clr-primary: rgba(133, 255, 222, 1);
+    --clr-secoundary: rgba(133, 255, 222, .5);
+  
+    --bg-clr-dark: #090909;
+    --bg-clr-light: #eeeeee;
+  
+    --ff-headers: 'Spartan', sans-serif;
+    --ff-text: 'Libre Baskerville', serif;
+  
+    --fw-n:300;
+    --fw-m:600;
+  
+    --fs-small:0.8rem;
+    --fs-p: 1rem;
+    --fs-2: 2rem;
+    --fs-3: 3rem;
+  
+    --max-w-px: 999px;
+    --max-w-pr:80%;
+  
+    --spacer: 1rem;
+    --spacer-s: 1.5rem;
+    --spacer-md: 4rem;
+    --spacer-lg: 8rem;
+  
+    --shadow:0 0 1em rgba (0,0,0, .25);
+    --br: 5px;
+    --gap: 1rem;
+}
+
+
+/* -- RESET SETTINGS START -- */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* -- RESET SETTINGS END -- */
+
+/* -- GENERAL CLASS SETTINGS -- */
+
+body {
+    width: 100vw;
+}
+
+h1, h2 {
+    font-family: var(--ff-headers);
+}
+p {
+    font-family: var(--ff-text);
+    font-size: var(--fs-p);
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4.5rem 0 4.5rem;
+}
+
+.flex {
+    display: flex;
+    gap: var(--gap, 2rem);
+}
+
+.grid {
+    display: grid;
+    gap: var(--gap, 2rem);
+}
+
+.icon {
+    width: 2rem;
+}
+
+/* -- GENERAL CLASS SETTINGS END -- */
+
+/* -- BUTTONS -- */
+
+.button {
+    position: relative;
+    text-decoration: none;
+    color: var(--bg-clr-dark);
+    font-family: var(--ff-headers);
+    font-weight: 700;
+    width: max-content;
+    padding: 0.5rem 1.5rem;
+}
+.button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 2rem;
+    background: var(--clr-secoundary);
+    width: 40px;
+    height: 40px;
+    z-index: -1;
+    transition: all .3s ease;
+}
+.button:hover::before {
+    width: 100%;
+    background: var(--clr-primary);
+}
+
+/* -- SOCIALS -- */
+
+.socials {
+    position: sticky;
+    flex-direction: column;
+    width: max-content;
+    gap: 1.5rem;
+    float: left;
+    left: 1rem;
+    top: 50%;
+}
+
+.socials a {
+    position: relative;
+}
+.socials a::before, .socials a::after {
+    content: "";
+    position: absolute;
+    top: 13px;
+    bottom: 0;
+    right: -12px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background: var(--clr-primary);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.socials a::after {
+    left: -12px;
+}
+.socials a:hover::before, .socials a:hover::after {
+    opacity: 1;
+}
+
+/* -- HEADER -- */
+
+.header {
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0 4rem;
+}
+
+.header__logo {
+    max-width: 13rem;
+}
+
+.header__nav {
+    margin: 2rem 2rem 0 0;
+    gap: 0rem;
+    float: right;
+    flex-direction: column;
+    align-items: flex-end;
+    cursor: pointer;
+    pointer-events: none;
+}
+.header__nav:hover {
+    pointer-events: all;
+}
+.hamb {
+    cursor: pointer;
+    display: inline-block;
+    pointer-events: all;
+}
+.spacer {
+    height: 50px;
+    margin-top: 5px;
+    cursor: pointer;
+    position: relative;
+}
+.spacer:before {
+    content: "";
+    position: absolute;
+    border-left: 2px solid var(--bg-clr-dark);
+    width: 1px;
+    height: 0%;
+    transition: height 0.25s ease;
+    transition-delay: 0.3s;
+}
+.item {
+    display: inline-block;
+    margin-top: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease, right 0.3s ease;
+}
+a {
+    font-family: var(--ff-headers);
+    color: var(--bg-clr-dark);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.item:hover a {
+    color: var(--clr-primary);
+}
+.header__nav:hover .spacer:before {
+    height: 100%;
+}
+.header__nav:hover .item {
+    opacity: 1;
+}
+.item:nth-child(1) {
+    transition-delay: 0.1s;
+}
+.item:nth-child(2) {
+    transition-delay: 0.4s;
+}
+.item:nth-child(3) {
+    transition-delay: 0.35s;
+}
+.header__nav:hover .item:nth-child(3) {
+    transition-delay: 0.3s;
+}
+.header__nav:hover .item:nth-child(4) {
+    transition-delay: 0.4s;
+}
+.header__nav:hover .item:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+/* -- INTRODUCTION -- */
+
+.introduction {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 6rem;
+}
+.introduction p {
+    line-height: 3rem;
+}
+.introduction h1 {
+    font-size: var(--fs-3);
+    position: relative;
+}
+.introduction h1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 30%;
+    width: 100%;
+    background: var(--clr-secoundary);
+    z-index: -1;
+}
+.profile-picture {
+    width: 12rem;
+}
+.profile-picture img {
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+/* -- MAIN -- */
+
+.main {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(1, 1fr);
+}
+
+.navigations {
+    padding: 3rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.card img {
+    border-radius: 20%;
+}
+
+.contact {
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-clr-light);
+    margin: 5rem 0 10rem;
+    padding: 2rem 1rem;
+}
+
+.contact__form {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    border-left: 2px solid var(--bg-clr-dark);
+    border-right: 2px solid var(--bg-clr-dark);
+}
+
+.contact__form h2 {
+    font-size: var(--fs-2);
+}
+
+.form__options {
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.form__options h3 {
+    font-family: var(--ff-headers);
+    font-size: var(--fs-p);
+}
+
+.form__options p  {
+    text-decoration: underline;
+    font-family: var(--ff-text);
+}
+
+/* -- FOOTER -- */
+
+.footer {
+    position: relative;
+    padding: 2.5rem;
+    background-color: var(--bg-clr-light);
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__nav {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.7rem;
+}
+
+.footer__nav a {
+    text-decoration: none;
+    font-family: var(--ff-headers);
+    color: var(--bg-clr-dark);
+    font-size: var(--fs-1);
+    transition: all 0.3s ease;
+}
+.footer__nav a:hover {
+    color: var(--clr-primary);
+    transform: scale(1.1);
+}
+
+.footer__copyright {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    font-size: var(--fs-small);
+}
+
+.footer__copyright p {
+    font-size: var(--fs-small);
+}
