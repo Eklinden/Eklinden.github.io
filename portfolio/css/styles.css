@@ -119,9 +119,10 @@ p {
 }
 
 .wrapper {
-    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 4.5rem 0 4.5rem;
+    max-width: 1200px;
+    flex-direction: column;
+    align-items: center;
 }
 
 .flex {
@@ -171,19 +172,18 @@ p {
 /* -- SOCIALS -- */
 
 .socials {
-    position: sticky;
-    flex-direction: column;
-    width: max-content;
-    gap: 1.5rem;
-    float: left;
-    left: 1rem;
-    top: 50%;
+    position: absolute;
+    float: right;
+    top: 40%;
+    right: 1rem;
 }
-
-.socials a {
+.socials__wrapper {
+    flex-direction: column;
+}
+.socials__wrapper a {
     position: relative;
 }
-.socials a::before, .socials a::after {
+.socials__wrapper a::before, .socials__wrapper a::after {
     content: "";
     position: absolute;
     top: 13px;
@@ -203,29 +203,22 @@ p {
     opacity: 1;
 }
 
-/* -- HEADER -- */
+/* -- NAV -- */
 
-.header {
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.5rem 0 4rem;
-}
-
-.header__logo {
-    max-width: 13rem;
-}
-
-.header__nav {
-    margin: 2rem 2rem 0 0;
+.nav {
     gap: 0rem;
+    position: absolute;
     float: right;
-    flex-direction: column;
-    align-items: flex-end;
+    top: 2rem;
+    left: 2rem;
     cursor: pointer;
     pointer-events: none;
 }
-.header__nav:hover {
+.nav:hover {
     pointer-events: all;
+}
+.nav__alt {
+    flex-direction: column;
 }
 .hamb {
     cursor: pointer;
@@ -262,33 +255,50 @@ a {
 .item:hover a {
     color: var(--clr-primary);
 }
-.header__nav:hover .spacer:before {
+.nav:hover .spacer:before {
     height: 100%;
 }
-.header__nav:hover .item {
+.nav:hover .item {
     opacity: 1;
 }
 .item:nth-child(1) {
-    transition-delay: 0.1s;
+    transition-delay: 0.2s;
 }
 .item:nth-child(2) {
-    transition-delay: 0.4s;
-}
-.item:nth-child(3) {
-    transition-delay: 0.35s;
-}
-.header__nav:hover .item:nth-child(3) {
     transition-delay: 0.3s;
 }
-.header__nav:hover .item:nth-child(4) {
+.item:nth-child(3) {
     transition-delay: 0.4s;
 }
-.header__nav:hover .item:nth-child(5) {
+.nav:hover .item:nth-child(4) {
+    transition-delay: 0.3s;
+}
+.nav:hover .item:nth-child(5) {
+    transition-delay: 0.4s;
+}
+.nav:hover .item:nth-child(6) {
     transition-delay: 0.5s;
+}
+
+/* -- HEADER -- */
+
+.header {
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 1.5rem 0 4rem;
+}
+
+.header__logo {
+    max-width: 13rem;
 }
 
 /* -- INTRODUCTION -- */
 
+.intro-wrapper {
+    width: 100%;
+    justify-content: center;
+}
 .introduction {
     flex-direction: column;
     align-items: center;
@@ -296,7 +306,9 @@ a {
     margin-bottom: 6rem;
 }
 .introduction p {
-    line-height: 3rem;
+    line-height: 2.5rem;
+    font-size: var(--fs-p);
+    margin: 0 0.2rem;
 }
 .introduction h1 {
     font-size: var(--fs-3);
@@ -331,18 +343,15 @@ a {
     gap: 2rem;
     flex-wrap: wrap;
 }
-
 .card {
     flex: 1;
     flex-direction: column;
     text-align: center;
     align-items: center;
 }
-
 .card img {
     border-radius: 20%;
 }
-
 .contact {
     flex-direction: column;
     align-items: center;
@@ -350,7 +359,6 @@ a {
     margin: 5rem 0 10rem;
     padding: 2rem 1rem;
 }
-
 .contact__form {
     width: 100%;
     flex-direction: column;
@@ -358,21 +366,17 @@ a {
     border-left: 2px solid var(--bg-clr-dark);
     border-right: 2px solid var(--bg-clr-dark);
 }
-
 .contact__form h2 {
     font-size: var(--fs-2);
 }
-
 .form__options {
     flex-direction: column;
     margin-bottom: 1rem;
 }
-
 .form__options h3 {
     font-family: var(--ff-headers);
     font-size: var(--fs-p);
 }
-
 .form__options p  {
     text-decoration: underline;
     font-family: var(--ff-text);
@@ -387,13 +391,11 @@ a {
     flex-direction: column;
     align-items: center;
 }
-
 .footer__nav {
     flex-direction: column;
     text-align: center;
     gap: 1.7rem;
 }
-
 .footer__nav a {
     text-decoration: none;
     font-family: var(--ff-headers);
@@ -405,14 +407,27 @@ a {
     color: var(--clr-primary);
     transform: scale(1.1);
 }
-
 .footer__copyright {
     position: absolute;
     bottom: 1rem;
     left: 1rem;
     font-size: var(--fs-small);
 }
-
 .footer__copyright p {
     font-size: var(--fs-small);
+}
+
+/* -- MEDIA QUERIES -- */
+
+@media (max-width: 500px) {
+    :root {
+        --fs-3:2rem;
+        --fs-p:.8rem;
+    }
+    .introduction {
+        margin-bottom: 2rem;
+    }
+    .button::before {
+        width: 100%;
+    }
 }

@@ -9,31 +9,37 @@
     <title>Portfolio</title>
 </head>
 <body>
-    <div class="flex socials">
-        <a href=""><img class="icon" src="/portfolio/images/icons/LinkedIn.png" alt=""></a>
-        <a href=""><img class="icon" src="/portfolio/images/icons/facebook.png" alt=""></a>
-        <a href=""><img class="icon" src="/portfolio/images/icons/instagram.png" alt=""></a>
-    </div>
-    <nav class="flex header__nav">
+    <nav class="nav">
         <div><img class="icon hamb" src="/portfolio/images/icons/hamburger.png" alt=""></div>
         <div class="spacer"></div>
-        <div class="item"><a href="">PROJECTS</a></div>
-        <div class="item"><a href="">ABOUT ME</a></div>
-        <div class="item"><a href="#contact">CONTACT ME</a></div>
+        <div class="flex nav__alt">
+            <div class="item"><a href="">PROJECTS</a></div>
+            <div class="item"><a href="">ABOUT ME</a></div>
+            <div class="item"><a href="#contact">CONTACT ME</a></div>
+        </div>
     </nav>
-    <div class="wrapper">
+    <nav class="socials">
+        <div class="flex socials__wrapper">
+            <a href=""><img class="icon" src="/portfolio/images/icons/LinkedIn.png" alt=""></a>
+            <a href=""><img class="icon" src="/portfolio/images/icons/facebook.png" alt=""></a>
+            <a href=""><img class="icon" src="/portfolio/images/icons/instagram.png" alt=""></a>
+        </div>
+    </nav>
+    <div class="flex wrapper">
         <header class="flex header">
             <figure class="header__logo">
                 <a href="#"><img src="/portfolio/images/logo.png" alt="logo"></a>
             </figure>
         </header>
-        <section class="flex introduction">
-            <figure class="profile-picture">
-                <img src="/portfolio/images/profilbild.jpg" alt="">
-            </figure>
-            <h1>Hi, I'm Linus Eklind</h1>
-            <p>I am undergoing education for Frontend-development at karlstads public university. <br> I have a good understanding of HTML, CSS, Wordpress and Javascript. </p>
-        </section>
+        <div class="flex intro-wrapper">
+            <section class="flex introduction">
+                <figure class="profile-picture">
+                    <img src="/portfolio/images/profilbild.jpg" alt="">
+                </figure>
+                <h1>Hi, I'm Linus Eklind</h1>
+                <p>I am undergoing education for Frontend-development at karlstads public university. <br> I have a good understanding of HTML, CSS, Wordpress and Javascript. </p>
+            </section>
+        </div>
         <main class="grid main">
             <section class="flex navigations">
                 <section class="flex card">
