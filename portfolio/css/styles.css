@@ -135,6 +135,7 @@ select {
 
 body {
     width: 100vw;
+    background-color: #eeeeee;
 }
 
 h1, h2 {
@@ -146,6 +147,7 @@ p {
 }
 
 .wrapper {
+    position: relative;
     margin: 0 auto;
     max-width: 1200px;
     flex-direction: column;
