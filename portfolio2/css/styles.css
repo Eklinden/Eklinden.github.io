@@ -1,0 +1,197 @@
+/* General styling */
+
+h1, h2{
+    font-size: var(--fs-heading);
+    font-family: var(--ff-heading);
+}
+
+p {
+    font-size: var(--fs-text);
+    font-family: var(--ff-text);
+}
+
+body {
+    background-color: var(--clr-bg);
+}
+
+.flex {
+    display: flex;
+    gap: var(--gap);
+}
+
+.grid {
+    display: grid;
+    gap: var(--gap);
+}
+
+/* button */ 
+
+.down-button {
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-dark);
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    border: 0.125em solid var(--clr-main);
+    box-shadow: inset 0 0 0.3 0 var(--clr-main), 0 0 0.2em 0 var(--clr-main);
+
+    position: relative;
+}
+.down-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 1.2em 0.2em var(--clr-main);
+    opacity: 1;
+    background-color: var(--clr-dark);
+    transition: opacity 200ms linear;
+    border-radius: 50%;
+}
+.down-arrow {
+    width: 70%;
+    opacity: 1;
+    z-index: 2;
+
+    animation: drop 2s ease;
+}
+
+.main-button {
+    position: relative;
+    text-decoration: none;
+    color: var(--clr-text);
+    font-family: var(--ff-text);
+    font-size: var(--fs-text);
+    padding: 1rem 2rem;
+    border: 0.125em solid var(--clr-main);
+    box-shadow: inset 0 0 0.3 0 var(--clr-main), 0 0 0.2em 0 var(--clr-main);
+}
+.main-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 1.2em 0.2em var(--clr-main);
+    background-color: var(--clr-dark);
+    transition: opacity 200ms linear;
+
+    z-index: -1;
+}
+
+/* scrolling effekt */
+
+.line-container {
+    position: fixed;
+    top: 0;
+    right: -1rem;
+    width: 100%;
+    height: 90%;
+    overflow: hidden;
+}
+
+svg {
+    display: inline-block;
+    height: 100%;
+    margin-bottom: 10%;
+}
+
+/* Hero */
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)), url(/portfolio2/img/hero-img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--clr-text);
+}
+.hero--container {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 10%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+/* .hero--text {
+
+} */
+.hero--text h2 {
+    font-size: var(--fs-sub);
+}
+.hero--picture {
+    width: 15rem;
+}
+.hero--picture img {
+    border-radius: 50%;
+}
+
+/* Introduction */
+
+.introduction {
+    margin: 0 auto;
+    max-width: 900px;
+    background: var(--clr-bg);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.banner {
+	margin-left: calc(50% - 50vw);
+	width: 100vw; height: 32.5vmin;
+	min-height: 15em;
+	background: linear-gradient(#000, transparent, #000), 
+		var(--img) 50%/ cover;
+	background-attachment: fixed;
+	background-blend-mode: multiply;
+}
+.intro-banner:nth-of-type(1), .intro-banner:nth-of-type(2) {
+    --img: url(/portfolio2/img/vandring.jpg)
+}
+.introduction--container {
+    flex-direction: column;
+    align-items: center;
+    color: var(--clr-text);
+    margin-bottom: 5rem;
+}
+.text-container {
+    width: 90%;
+    text-align: center;
+    flex-direction: column;
+}
+
+/* Projekts */
+
+.projekts {
+    color: var(--clr-text);
+    text-align: center;
+    margin: 2rem auto;
+    flex-direction: column;
+}
+.projekts--intro {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+.proj-banner:nth-of-type(1) {
+    --img: url(/portfolio2/img/code.jpg)
+}
+.projekt {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--clr-text);
+}
+.projekt--display {
+    border-radius: 10px;
+    width: 90%;
+}

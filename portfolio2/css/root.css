@@ -1,0 +1,14 @@
+:root {
+    --clr-main: #05FF00;
+    --clr-bg: #222;
+    --clr-dark: #222;
+    --clr-text: #fff;
+
+    --ff-heading: 'Patrick Hand', cursive;
+    --ff-text:'Roboto', sans-serif;
+    --fs-heading: 4rem;
+    --fs-text: 1rem;
+    --fs-sub: 3rem;
+
+    --gap: 2rem;
+}
