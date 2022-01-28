@@ -14,6 +14,13 @@ body {
     background-color: var(--clr-bg);
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .flex {
     display: flex;
     gap: var(--gap);
@@ -52,6 +59,7 @@ body {
     transition: opacity 200ms linear;
     border-radius: 50%;
 }
+
 .down-arrow {
     width: 70%;
     opacity: 1;
@@ -137,21 +145,21 @@ svg {
 /* Introduction */
 
 .introduction {
-    margin: 0 auto;
     max-width: 900px;
     background: var(--clr-bg);
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 .banner {
-	margin-left: calc(50% - 50vw);
-	width: 100vw; height: 32.5vmin;
+	width: 100vw; height: 30.5vmin;
+    max-width: 1200px;
+    overflow: hidden;
 	min-height: 15em;
 	background: linear-gradient(#000, transparent, #000), 
 		var(--img) 50%/ cover;
 	background-attachment: fixed;
 	background-blend-mode: multiply;
+
 }
 .intro-banner:nth-of-type(1), .intro-banner:nth-of-type(2) {
     --img: url(/portfolio2/img/vandring.jpg)
@@ -194,4 +202,43 @@ svg {
 .projekt--display {
     border-radius: 10px;
     width: 90%;
+}
+
+/* Contact form */
+
+.form {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    gap: 1rem;
+    color: var(--clr-text);
+    font-family: var(--ff-text);
+    margin-bottom: 5rem;
+}
+.form--heading {
+    font-family: var(--ff-heading);
+}
+.form--heading h3 {
+    font-size: var(--fs-sub);
+    opacity: 0.7;
+}
+input[type=text], select, textarea {
+    border: 1px solid var(--clr-main);
+    border-radius: 10px;
+    padding: 12px;
+    z-index: 1;
+}
+input[type=submit] {
+    background-color: #04AA6D;
+    color: var(--clr-text);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 40%;
+    z-index: 1;
+}
+input[type=submit]:hover {
+    background-color: var(--clr-main);
 }
