@@ -22,3 +22,16 @@
         transform: translateY(0);
     }
 }
+
+@keyframes fade-left {
+    0% {
+        transform: translateY(50px)
+        rotateY(-50deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0)
+        rotateY(0deg);
+        opacity: 1;
+    }   
+}
