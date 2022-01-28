@@ -218,14 +218,24 @@ svg {
 }
 .form--heading {
     font-family: var(--ff-heading);
+    text-align: center;
 }
 .form--heading h3 {
     font-size: var(--fs-sub);
     opacity: 0.7;
 }
+.form--input {
+    flex-direction: column;
+    width: 100%;
+    max-width: 85vw;
+    align-self: flex-end;
+    margin-right: 0.5rem;
+}
 input[type=text], select, textarea {
-    border: 1px solid var(--clr-main);
-    border-radius: 10px;
+    border: none;
+    color: var(--clr-text);
+    border-bottom: 2px solid var(--clr-main);
+    background-color: #00000005;
     padding: 12px;
     z-index: 1;
 }
@@ -241,4 +251,12 @@ input[type=submit] {
 }
 input[type=submit]:hover {
     background-color: var(--clr-main);
+}
+
+/* mediaqueries */
+
+@media screen and (max-width: 800px) {
+    .line-container {
+        right: -0.1rem;
+    }
 }
