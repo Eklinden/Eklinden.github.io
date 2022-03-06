@@ -169,12 +169,12 @@ svg {
 .nav:hover {
     pointer-events: all;
 }
-.nav__alt {
+.nav--alt {
     flex-direction: column;
     align-items: flex-end;
     gap: 1rem;
 }
-.nav-icon {
+.nav--icon {
     cursor: pointer;
     display: inline-block;
     pointer-events: all;
@@ -264,7 +264,7 @@ a {
     color: var(--clr-text);
     margin-bottom: 5rem;
 }
-.text-container {
+.text--container {
     width: 90%;
     text-align: center;
     flex-direction: column;
@@ -356,5 +356,9 @@ a {
     }
     .hero--container {
         flex-direction: column;
+    }
+    .projekt-button::before {
+        width: 100%;
+        background: rgba(0, 133, 255, .5);
     }
 }

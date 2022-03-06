@@ -1,0 +1,52 @@
+.projekt-wrapper {
+    display: flex;
+    margin: 4rem auto 0;
+    align-items: center;
+    justify-content: center;
+    width: 85vw;
+    flex-wrap: wrap;
+    overflow: hidden;
+    gap: 2rem;
+}
+.header {
+    text-align: center;
+    color: var(--clr-dark);
+}
+.projekt--card {
+    width: 30rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+.projekt--card h2{
+    font-size: var(--fs-card);
+}
+.projekt--card img {
+    border-radius: 1rem;
+}
+.projekt-button {
+    position: relative;
+    text-decoration: none;
+    color: var(--clr-dark);
+    font-family: var(--ff-heading);
+    width: max-content;
+    padding: 0.5rem 1.5rem;
+}
+.projekt-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 2rem;
+    background: rgba(0, 133, 255, .3);
+    width: 40px;
+    height: 40px;
+    z-index: -1;
+    transition: all .3s ease;
+}
+.projekt-button:hover::before {
+    width: 100%;
+    background: rgba(0, 133, 255, .5);
+}
