@@ -11,6 +11,19 @@
 .header {
     text-align: center;
     color: var(--clr-dark);
+    margin-bottom: 2rem;
+}
+.back {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-size: var(--fs-card);
+    font-family: var(--ff-heading);
+    color: var(--clr-dark);
+    transition: all 100ms ease;
+}
+.back:hover {
+    transform: scale(1.05);
 }
 .projekt--card {
     width: 30rem;
