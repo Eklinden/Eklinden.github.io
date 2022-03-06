@@ -362,7 +362,7 @@ a {
         width: 100%;
         background: rgba(0, 133, 255, .5);
     }
-    .header {
+    .header h1{
         margin-top: 5rem;
     }
 }
