@@ -10,7 +10,7 @@ function createListItem(track) {
     <div class="flex song">
     <img src="${track.album.images[0].url}" alt="" class="song--album">
         <div class="song--title flex">
-            <p>${track.album.name}</p>
+            <p>${track.name}</p>
         </div>
     </div>`;
     trackListElem.appendChild(listItem);
