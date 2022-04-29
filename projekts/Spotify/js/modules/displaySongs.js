@@ -18,7 +18,7 @@ function createListItem(track) {
         console.log('Preview url:', track.preview_url);
         audioElem.setAttribute('src', track.preview_url);
         musicCardElem.children[0].setAttribute('src', track.album.images[0].url)
-        musicCardElem.children[1].innerText = track.album.name;
+        musicCardElem.children[1].innerText = track.name;
     })
 }
 
