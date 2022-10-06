@@ -1,0 +1,71 @@
+@import "../../scss/Variables.scss";
+
+.header {
+    margin: 0;
+    width: 100%;
+    padding: .7rem 0 1rem 0;
+    display: flex;
+    gap: .5rem;
+    section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        nav {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            a {
+                padding-top: .5rem;
+            }
+            .home-button {
+                font-size: 18px;
+            }
+            .add-score {
+                display: flex;
+                align-items: center;
+                gap: .3rem;
+                height: max-content;
+            }
+        }
+    }
+}
+.cName-wrapper {
+    display: flex;
+    position: relative;
+    align-items: flex-end;
+    flex: 1;
+    gap: .4rem;
+    h1 {
+        padding-bottom: .5rem;
+        span {
+            @extend %linear-text-color;
+            font-size: 30px;
+        }
+    }
+    h2 {
+        padding-bottom: .7rem;
+        color: $grey-color;
+    }
+    .line {
+        width: 1rem;
+        height: 2px;
+        background-color: #000;
+        margin-bottom: 1.3rem;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 1120px;
+        height: 2px;
+        background-color: $black-color;
+    }
+}
+.logo-container {
+    margin: 0;
+    width: 5rem;
+    .logo {
+        width: 100%;
+    }
+}

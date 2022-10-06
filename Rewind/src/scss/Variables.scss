@@ -1,0 +1,25 @@
+:root {
+    --fs-header: 26px;
+    --fs-semi-header: 20px;
+    --fs-text: 17px;
+}
+
+$main-color: #009861;
+$black-color: #1F1F1F;
+$grey-color: #303030;
+$white-color: #213;
+
+%text-css {
+    color: $black-color;
+    font-family: "calibri";
+    margin: 0;
+}
+
+%linear-text-color {
+    background: -webkit-linear-gradient(#009861, #89FFA4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+%linear-color {
+    background: -webkit-linear-gradient(#009861, #89FFA4);
+}
